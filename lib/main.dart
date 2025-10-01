@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final codeController = CodeController(
-        language: cpp,
+        language: brainfuck,// mudado cpp->brainfuck
         text: _program,
         theme: monokaiSublimeTheme,
         onChange: (value) {
@@ -157,14 +157,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ScrollController(), //https://stackoverflow.com/questions/69883594/flutter-linuix-the-provided-scrollcontroller-is-currently-attached-to-more-than
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children:[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         color: Colors.white,
                         child: Text('$_output',
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.headline5),
+                                    textAlign: TextAlign.left,
+                                    style: Theme.of(context).textTheme.headlineSmall),//mudança style: Theme.of(context).textTheme.headline5), -> style: Theme.of(context).textTheme.headlineSmall),
+
+
                       ),
                     ),
                     bfi.waitingInput
@@ -186,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: runC,
+        onPressed: _run,//mudança runc->_run
         tooltip: 'Play!',
         child: Icon(Icons.play_arrow),
       ),
