@@ -9,3 +9,10 @@ Download and do
 `flutter pub get`
 
 `flutter run`
+
+
+To run on linux 
+` flutter create .`
+` flutter run -d linux`
+
+
